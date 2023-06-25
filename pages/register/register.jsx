@@ -3,7 +3,7 @@ import "./register.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const URI = "http://ecommerceback-production-6a3c.up.railway.app/usuarios/";
+const URI = 'https://ecommerce-back-omega.vercel.app/usuarios/';
 
 const Register = () => {
   const [nombre, setNombre] = useState("");

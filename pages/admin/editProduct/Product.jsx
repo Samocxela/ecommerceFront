@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from 'axios';
 
-const URI = 'http://ecommerceback-production-6a3c.up.railway.app/productos/';//aqui se hacen las peticiones 
+const URI = 'https://ecommerce-back-omega.vercel.app/productos/';//aqui se hacen las peticiones 
 
 export const Product = (props) => {
     const { id, nombre, precio, img, img2, img3, stockmax, stockmin, stock } = props.data;

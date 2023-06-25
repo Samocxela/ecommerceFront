@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { ShopContext } from "../../context/shop-context"; //se importa el contexto
 import { useContext } from "react";
 
-const URI = "http://ecommerceback-production-6a3c.up.railway.app/usuarios/"; //ruta para hacer las peticiones
+const URI = "https://ecommerce-back-omega.vercel.app/usuarios/"; //ruta para hacer las peticiones
 
 const Login = () => {
   const context = useContext(ShopContext);

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const URI = 'http://ecommerceback-production-6a3c.up.railway.app/productos/'; //se hacen las peticiones aqui 
+const URI = 'https://ecommerce-back-omega.vercel.app/productos/'; //se hacen las peticiones aqui 
 
 export const Shop = () => {
 

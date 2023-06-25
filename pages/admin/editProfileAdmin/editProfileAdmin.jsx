@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-const URIADMIN = 'http://ecommerceback-production-6a3c.up.railway.app1/usuarios/1/';
+const URIADMIN = 'https://ecommerce-back-omega.vercel.app/usuarios/1/';
 
 const EditAdmin = () => {
   const [password, setPassword] = useState('');

@@ -7,7 +7,7 @@ import axios from 'axios';//se usa para hacer peticiones al servidor
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const URI = 'http://ecommerceback-production-6a3c.up.railway.app/productos/';//esta sera la ruta en la cual se haran las peticiones
+const URI = 'https://ecommerce-back-omega.vercel.app/productos/';//esta sera la ruta en la cual se haran las peticiones
 
 export const Cart = () => {
     const context = useContext(ShopContext);//variable para usar el contexto

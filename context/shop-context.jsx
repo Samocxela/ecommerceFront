@@ -3,7 +3,7 @@ import axios from 'axios';//se importa axios para generar peticiones al servidor
 import { useEffect } from 'react';
 
 export const ShopContext = createContext(null);
-const URI = 'http://ecommerceback-production-6a3c.up.railway.app/productos/';//esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
+const URI = 'https://ecommerce-back-omega.vercel.app/productos/';//esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
 
 const getDefaultCart = () => {//se crea un arreglo que se usara para darle una cantidad a cada producto esto, cada posicion del arreglo contendra un cero como cantidad
     let cart = {}

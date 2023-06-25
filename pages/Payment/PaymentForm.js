@@ -42,7 +42,7 @@ export default function PaymentForm() {
         
         try {
             const {id} = paymentMethod//si no hay error se almacena el if de payment method
-            const response = await axios.post("http://ecommerceback-production-6a3c.up.railway.app/payment", { //se crea una peticion para el pago
+            const response = await axios.post("https://ecommerce-back-omega.vercel.app/payment", { //se crea una peticion para el pago
                 amount: context.payAumount, //con el total de la compra
                 id
             });
