@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 
 export const Product = (props) => {
-    const { id, nombre, precio, descripcion, img, img2, img3 } = props.data; //se guardan las informaciones de la base de datos
+    const { id, nombre, precio, descripcion, img } = props.data; //se guardan las informaciones de la base de datos
     const { addToCart, cartItems} = useContext(ShopContext); //se usa el context para agregar al carrito 
 
     const cartItemAmount = cartItems[id];

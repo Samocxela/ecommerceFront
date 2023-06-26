@@ -47,25 +47,24 @@ export const ShopContextProvider = (props) => {
         return totalAmount;//retorna el valor total de la compra 
     };
 
-    const addToCart = async (itemId) => { //funcion para poder agregar al carrito enviando como parametro el id del producto y poder reservarlo en el servidor
-        await axios.get('https://ecommerce-back-omega.vercel.app/productos/book/'+ itemId + '?f=book')//se genera una peticion get para poder traer el producto el cual se va reservar el producto
-        .then(({ data }) => {
-            data==='Booked' ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 })) : void(0);//si el dato extraido es Booked le sumamos 1 a la posicion que represente al producto dentro del arreglo para poder saber la cantidad de cada producto
-            data==='Stockout' ? alert('Empty product') : void(0); //en caso de que el estado retornado sea Stockout se crea una alerta que dice que el producto esta vacio y no hace nada
-        })
-        .catch(error => {
-            console.log(error.message);//si hay un error lo muestra por consola
-        }) 
+    const addToCart = async (itemId) => {
+        try {
+          // Realiza las acciones necesarias para agregar el producto al carrito sin book
+          console.log(itemId)
+          setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+        } catch (error) {
+          console.log(error.message);
+        }
     };
+    
 
-    const removeFromCart = async (itemId) => { //funcion para remover del carrito a partir del id
-        await axios.get('https://ecommerce-back-omega.vercel.app/productos/book/'+ itemId + '?f=unbook')//en esta ruta se hace la peticion
-        .then(({ data }) => {
-            data==='Unbooked' ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 })) : void(0);//si tiene el estado unbooked se le resta 1 en el arreglo de la cantidad
-        })
-        .catch(error => {
-            console.log(error.message);
-        }) 
+    const removeFromCart = (itemId) => {
+        if (cartItems[itemId] && cartItems[itemId] > 0) {
+          setCartItems((prev) => ({
+            ...prev,
+            [itemId]: prev[itemId] - 1,
+          }));
+        }
     };
 
     const logout = () => {
