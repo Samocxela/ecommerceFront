@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from './productAddtoCart';
+import { ProductAddtoCart } from './productAddtoCart';
 import './shopAddtoCart.css';
 import axios from 'axios';
 import { useState } from 'react';
@@ -25,7 +25,7 @@ export const ShopAddtoCart = () => {
             </div>
             <div className="products"> 
                 {products.map((product) => (
-                    <Product key={product.id} data={product} />//aqui por todo el arreglo de productos se imprimen los productos
+                    <ProductAddtoCart key={product.id} data={product} />//aqui por todo el arreglo de productos se imprimen los productos
                 ))}
             </div>
         </div>

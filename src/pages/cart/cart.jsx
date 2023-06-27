@@ -27,28 +27,23 @@ export const Cart = () => {
 
     const buy = async (e) => {
         e.preventDefault();
-        //console.log(cartItems);
-        await axios.put(URI + 'buy', {//se envian con este metodo para poder actualizar la base de datos desde el back
-            "1": cartItems[1],
-            "2": cartItems[2],
-            "3": cartItems[3],
-            "4": cartItems[4],
-            "5": cartItems[5],
-            "6": cartItems[6],
-            "7": cartItems[7],
-            "8": cartItems[8],
-            "9": cartItems[9],
-            "10": cartItems[10],
-        })
-        .then((res) => {
-            //alert(res);
-        }).catch((err) => {
-            alert(err.message)
+      
+        const cartData = {};
+        Object.keys(cartItems).forEach((itemId) => {
+          cartData[itemId] = cartItems[itemId];
         });
-        context.setPayAumount(totalAmount); //antes de pasar al portal de pago se agrega en el context el valor de la compra para poder cobrar ese monto
-        navigate('/stripe');//se navega hacia la pagina de pago
-    }
-
+        
+        try {
+            console.log(cartData)
+          await axios.put(URI + 'buy', cartData);
+          context.setPayAumount(totalAmount);
+          navigate('/stripe');
+        } catch (error) {
+          alert(error.message);
+        }
+      };
+      
+      
     return (
         <div className="cart">
             <div> 

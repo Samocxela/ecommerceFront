@@ -5,7 +5,7 @@ import axios from 'axios';
 const URI = 'https://ecommerce-back-omega.vercel.app/productos/';//aqui se hacen las peticiones 
 
 export const Product = (props) => {
-    const { id, nombre, precio, img, img2, img3, stockmax, stockmin, stock } = props.data;
+    const { id, nombre, precio, img, stockmax, stockmin, stock } = props.data;
     const [priceHook, setPrice] = useState('');
     const [maxStock, setMaxS] = useState('');
     const [minStock, setMinS] = useState('');

@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 
-export const Product = (props) => {
+export const ProductAddtoCart = (props) => {
     const { id, nombre, precio, descripcion, img } = props.data; //se guardan las informaciones de la base de datos
     const { addToCart, cartItems} = useContext(ShopContext); //se usa el context para agregar al carrito 
 
     const cartItemAmount = cartItems[id];
+    console.log(cartItemAmount)
     return (
         <div className="product">
             <div className="slide-var"> {/*se hace el carusel */}
