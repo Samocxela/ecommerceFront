@@ -62,7 +62,7 @@ export const Cart = () => {
                 <button onClick={() => navigate ("/shop")}> Continue Shopping</button>{/*si se le da click se devuelve a la tienda principal */}
                 <button onClick={buy}> Checkout </button>{/*si se le da clic llama a la funcion buy que lleva a procesar el pago */}
             </div>
-            : <h1> Your Cart is Empty </h1>}
+            : <h1 className='mensaje-vacio'> Your Cart is Empty </h1>}
         </div>
     )
 };

@@ -13,34 +13,37 @@ import StripeContainer from "./pages/Payment/stripeContainer"; //se usa para pod
 import { Footer } from "./components/footer";
 function App() {
   return (
-    <div className="App">
-      <ShopContextProvider>
-        <Router>
-          <Navbar />
-          
-          <Routes>
-            <Route path="/" element={<Shop />} />{" "}
-            {/*la ruta principal sera para la tienda*/}
-            <Route path="/shop" element={<ShopAddtoCart />} />
-            {/*ruta principal para cuando se a logeado alguien y pueda usar el boton*/}
-            <Route path="/cart" element={<Cart />} />
-            {/*ruta para el carrito*/}
-            <Route path="/login" element={<Login />} />
-            {/*ruta para el login*/}
-            <Route path="/register" element={<Register />} />
-            {/*ruta para el register*/}
-            <Route path="/editAdmin" element={<EditAdmin />} />
-            {/*ruta para editar el admin*/}
-            <Route path="/editInventory" element={<EditProduct />} />
-            {/*ruta para poder editar el inventario*/}
-            <Route path="/stripe" element={<StripeContainer />} />
-            {/*ruta para poder llegar a la pagina de pago */}
-          </Routes>
-          
-        </Router>
-      </ShopContextProvider>
-      <Footer />
-    </div>
+    <section>
+      <div className="App">
+        <ShopContextProvider>
+          <Router>
+            <Navbar />
+
+            <Routes>
+              <Route path="/" element={<Shop />} />{" "}
+              {/*la ruta principal sera para la tienda*/}
+              <Route path="/shop" element={<ShopAddtoCart />} />
+              {/*ruta principal para cuando se a logeado alguien y pueda usar el boton*/}
+              <Route path="/cart" element={<Cart />} />
+              {/*ruta para el carrito*/}
+              <Route path="/login" element={<Login />} />
+              {/*ruta para el login*/}
+              <Route path="/register" element={<Register />} />
+              {/*ruta para el register*/}
+              <Route path="/editAdmin" element={<EditAdmin />} />
+              {/*ruta para editar el admin*/}
+              <Route path="/editInventory" element={<EditProduct />} />
+              {/*ruta para poder editar el inventario*/}
+              <Route path="/stripe" element={<StripeContainer />} />
+              {/*ruta para poder llegar a la pagina de pago */}
+            </Routes>
+          </Router>
+        </ShopContextProvider>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </section>
   );
 }
 

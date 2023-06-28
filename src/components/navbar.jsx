@@ -16,32 +16,33 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
-      {!context.admin ? (
-        !context.logged ? (
-          <div className="links">
-            <Link to="/">Shop</Link>
-            <Link to="/login">
-              <ShoppingCart size={32} />
-            </Link>
-          </div>
+    <div className="nav-container">
+      <div className="navbar">
+        {!context.admin ? (
+          !context.logged ? (
+            <div className="links">
+              <Link to="/">Shop</Link>
+              <Link to="/login">
+                <ShoppingCart size={32} />
+              </Link>
+            </div>
+          ) : (
+            <div className="links">
+              <Link to="/shop">Shop</Link>
+              <Link to="/cart">
+                <ShoppingCart size={32} />
+              </Link>
+              <button onClick={handleLogout}>Salir</button>
+            </div>
+          )
         ) : (
           <div className="links">
-            <Link to="/shop">Shop</Link>
-            <Link to="/cart">
-              <ShoppingCart size={32} />
-            </Link>
-            <button onClick={handleLogout}>Salir</button>
+            <Link to="/editInventory">Products</Link>
+            <Link to="/editAdmin">Admin Profile</Link>
+            <button type="button" className="btn btn-secondary" onClick={handleLogout}>Salir</button>
           </div>
-        )
-      ) : (
-        <div className="links">
-          <Link to="/editInventory">Products</Link>
-          <Link to="/editAdmin">Admin Profile</Link>
-          <button onClick={handleLogout}>Salir</button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
-

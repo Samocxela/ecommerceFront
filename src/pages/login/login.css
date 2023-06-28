@@ -22,7 +22,7 @@
 .btn-login {
     width: 100%;
     padding: 15px;
-    background-color: rgb(76, 162, 5);
+    background-color: #1b1b1b;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
@@ -33,8 +33,8 @@
 
 .btn-login:hover, btn-login:active{
     color: white;
-    background-color: #165c19;
-    border-color: #165c19;
+    background-color: #484848;
+    border-color: #7b7b7b;
 }
 
 .btn-login:focus{
@@ -61,8 +61,8 @@
 
 .btn-register:hover, btn-register:active{
     color: white;
-    background-color: #10b981;
-    border-color: #10b981;
+    background-color: #727272;
+    border-color: #383838;
 }
 
 .btn-register:focus{
