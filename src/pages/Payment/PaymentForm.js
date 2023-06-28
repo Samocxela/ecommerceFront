@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+/*import React, { useState, useContext } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ShopContext } from "../../context/shop-context";
 import axios from "axios";
@@ -68,7 +68,7 @@ export default function PaymentForm() {
                     <CardElement options={CARD_OPTIONS}/>
                 </div>
             </fieldset>
-            <button className="pay">Pay</button> {/*boton para pagar  */}
+            <button className="pay">Pay</button> {/*boton para pagar  
         </form>
         :
         <div>
@@ -77,4 +77,4 @@ export default function PaymentForm() {
         }
         </>
     )
-}
+}*/

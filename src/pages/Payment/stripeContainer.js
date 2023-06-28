@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import {Elements} from "@stripe/react-stripe-js";//se llama elements para stripe
 import { loadStripe } from '@stripe/stripe-js'; //se llama loadstripe
 import PaymentForm from './PaymentForm';
@@ -9,8 +9,8 @@ const stripeTestPromise = loadStripe(PUBLIC_KEY); //se crea una variable en la q
 
 export default function StripeContainer() {
     return (
-        <Elements stripe={stripeTestPromise}>{/*se llama al elemento al formulario de del pago  */}
+        <Elements stripe={stripeTestPromise}>{/*se llama al elemento al formulario de del pago  
                 <PaymentForm/>
         </Elements>
     )
-}
+}*/

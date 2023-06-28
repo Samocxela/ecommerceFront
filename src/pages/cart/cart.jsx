@@ -32,11 +32,12 @@ export const Cart = () => {
           data[itemId] = parseInt(quantity);
           return data;
         }, {});
-      
         try {
-          await axios.put(URI + 'buy', cartData);
+            console.log(cartData)
+          await axios.put(URI+'buy', cartData);
           context.setPayAumount(totalAmount);
-          navigate('/stripe');
+          alert("payment succesful")
+          //navigate('/stripe');
         } catch (error) {
           alert(error.message);
         }

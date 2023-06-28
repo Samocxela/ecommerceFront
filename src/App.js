@@ -9,7 +9,7 @@ import Login from "./pages/login/login.jsx"; //se importa el login para usarlo e
 import Register from "./pages/register/register.jsx"; //se importa el register para usarlo en la pagina
 import EditAdmin from "./pages/admin/editProfileAdmin/editProfileAdmin"; //se importa para poder editar el administrador de la pagina
 import { EditProduct } from "./pages/admin/editProduct/editProduct"; //se importa para poder editar los productos
-import StripeContainer from "./pages/Payment/stripeContainer"; //se usa para poder llamar a la pagina del portal del pago
+//import StripeContainer from "./pages/Payment/stripeContainer"; //se usa para poder llamar a la pagina del portal del pago
 import { Footer } from "./components/footer";
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
               {/*ruta para editar el admin*/}
               <Route path="/editInventory" element={<EditProduct />} />
               {/*ruta para poder editar el inventario*/}
-              <Route path="/stripe" element={<StripeContainer />} />
+              
               {/*ruta para poder llegar a la pagina de pago */}
             </Routes>
           </Router>
