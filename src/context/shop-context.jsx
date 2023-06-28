@@ -73,9 +73,23 @@ export const ShopContextProvider = (props) => {
         setAdmin(false);
     };
 
-    
+    const clearCart = async () => {
+        try {
+          // Reiniciar el carrito en el servidor
+          await axios.put(`${URI}buy`, cartItems);
+      
+          // Establecer la cantidad de cada elemento en 0
+          const newCartItems = {};
+          for (const item in cartItems) {
+            newCartItems[item] = 0;
+          }
+          setCartItems(newCartItems);
+        } catch (error) {
+          console.log(error.message);
+        }
+      };
 
-    const contextValue = { cartItems, addToCart, removeFromCart, getTotalCartAmount, loggedChanger,logout, logged, AdminChanger, admin, payAumount,setPayAumount};//metemos todas las funciones y hooks dentro del contexto
+    const contextValue = { clearCart, cartItems, addToCart, removeFromCart, getTotalCartAmount, loggedChanger,logout, logged, AdminChanger, admin, payAumount,setPayAumount};//metemos todas las funciones y hooks dentro del contexto
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}

@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 const URI = 'https://ecommerce-back-omega.vercel.app/productos/';//esta sera la ruta en la cual se haran las peticiones
-
+//const URI = 'http://localhost:5000/productos/';//esta sera la ruta en la cual se haran las peticiones
 export const Cart = () => {
     const context = useContext(ShopContext);//variable para usar el contexto
     const { cartItems, getTotalCartAmount } = useContext(ShopContext); //aqui almacenamos los elementos del carrito
@@ -28,13 +28,12 @@ export const Cart = () => {
     const buy = async (e) => {
         e.preventDefault();
       
-        const cartData = {};
-        Object.keys(cartItems).forEach((itemId) => {
-          cartData[itemId] = cartItems[itemId];
-        });
-        
+        const cartData = Object.entries(cartItems).reduce((data, [itemId, quantity]) => {
+          data[itemId] = parseInt(quantity);
+          return data;
+        }, {});
+      
         try {
-            console.log(cartData)
           await axios.put(URI + 'buy', cartData);
           context.setPayAumount(totalAmount);
           navigate('/stripe');
@@ -42,6 +41,7 @@ export const Cart = () => {
           alert(error.message);
         }
       };
+      
       
       
     return (

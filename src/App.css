@@ -1,13 +1,16 @@
-.App {/*se le da un tamaño a la pagina*/
+.App {
+  /*se le da un tamaño a la pagina*/
   width: 100vw;
   height: auto;
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {/*se quita el padding y margin que vienen por defecto en la pagina*/
+body {
+  /*se quita el padding y margin que vienen por defecto en la pagina*/
   padding: 0;
   margin: 0;
+ 
 }
 
 .mensaje-vacio {
@@ -27,17 +30,20 @@ body {/*se quita el padding y margin que vienen por defecto en la pagina*/
   background-color: #1b1b1b;
   height: 15vh;
 }
-.link{
+
+.link {
   text-decoration: none;
   margin-inline: 40px;
-  
+
 }
-.nav-container{
+
+.nav-container {
   position: sticky;
   z-index: 3;
   top: 0;
 }
-.navbar-logo{
+
+.navbar-logo {
   justify-self: start;
   margin-left: 20px;
   color: #fff;
@@ -46,13 +52,14 @@ body {/*se quita el padding y margin que vienen por defecto en la pagina*/
 
 }
 
-.seeCarrito{
+.seeCarrito {
   font-size: 25px;
   margin-left: 20px;
   margin-top: 4vh;
   cursor: pointer;
   text-decoration: none;
 }
-.footer{
+
+.footer {
   text-align: center;
 }
